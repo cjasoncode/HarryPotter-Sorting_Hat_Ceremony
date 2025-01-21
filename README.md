@@ -1,4 +1,4 @@
-   <h2 style="font-size: 20px; color: blue;">🪄 Hogwarts Sorting Ceremony Simulator 🧙‍♂️</h2>
+   <h1 style="font-size: 20px; color: blue;">🪄 Hogwarts Sorting Ceremony Simulator 🧙‍♂️</h1>
 
 ![Sorting Hat](https://assets.teenvogue.com/photos/585bea210cca28b611745bec/10:9/w_1280,c_limit/hp-sorting-hat.jpg)
 
