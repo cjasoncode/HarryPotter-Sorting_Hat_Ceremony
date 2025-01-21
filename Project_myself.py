@@ -193,7 +193,7 @@ albus_motivation.play()
 time.sleep(8.5)
 glasstape = vlc.MediaPlayer("glasstape.mp3")
 glasstape.play()
-time.sleep(1.3)
+time.sleep(3.5)
 print("\n              Now, let the feast begin! \n\n")
 feast.play()
 time.sleep(3.9)  # Ensure the audio has time to start
