@@ -3,9 +3,9 @@
 Experience the magical Hogwarts Sorting Ceremony! This interactive Python program takes you on a journey through the Great Hall, answering questions to determine your house. With immersive audio, random events, and captivating storytelling, step into the wizarding world like never before!
 
 Features:
-🎩 Interactive Sorting Hat Quiz to find your house
-🎵 Immersive background music and sound effects using the VLC library
-🏰 Authentic Hogwarts subjects and professors
-🗣 Motivational speeches from Headmaster Dumbledore
-🍽 Feast celebration at the end of the ceremony
-Get started today and find out if you're Gryffindor, Slytherin, Hufflepuff, or Ravenclaw!
+1. 🎩 Interactive Sorting Hat Quiz to find your house
+2. 🎵 Immersive background music and sound effects using the VLC library
+3. 🏰 Authentic Hogwarts subjects and professors
+4. 🗣 Motivational speeches from Headmaster Dumbledore
+5. 🍽 Feast celebration at the end of the ceremony
+6. Get started today and find out if you're Gryffindor, Slytherin, Hufflepuff, or Ravenclaw!
