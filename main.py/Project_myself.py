@@ -32,12 +32,12 @@ first_announcment = vlc.MediaPlayer(os.path.join(professors_dir, "first_anncounm
 
 
 voice_teacher = [
-    os.path.join(".mp3s", "Professor's.mp3's", "qurriell.mp3"),
-    os.path.join(".mp3s", "Professor's.mp3's", "lockhart.mp3"),
-    os.path.join(".mp3s", "Professor's.mp3's", "lupin.mp3"),
-    os.path.join(".mp3s", "Professor's.mp3's", "moddy.mp3"),
-    os.path.join(".mp3s", "Professor's.mp3's", "umbridge.mp3"),
-    os.path.join(".mp3s", "Professor's.mp3's", "snape.mp3")
+    os.path.join(".mp3's", "Professor's.mp3's", "qurriell.mp3"),
+    os.path.join(".mp3's", "Professor's.mp3's", "lockhart.mp3"),
+    os.path.join(".mp3's", "Professor's.mp3's", "lupin.mp3"),
+    os.path.join(".mp3's", "Professor's.mp3's", "moddy.mp3"),
+    os.path.join(".mp3's", "Professor's.mp3's", "umbridge.mp3"),
+    os.path.join(".mp3's", "Professor's.mp3's", "snape.mp3")
 ]
 
 
