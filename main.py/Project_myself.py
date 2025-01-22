@@ -1,23 +1,62 @@
 import random
 import time
+import os
 from tabulate import tabulate
 import vlc
-feast=vlc.MediaPlayer("feast.mp3")
-respect =vlc.MediaPlayer("respect.mp3")
 
-hogwards= vlc.MediaPlayer("music.mp3")
-hogwards.play()
-Gryffindor_SONG =vlc.MediaPlayer("Gryffindor.mp3")
-Slytherin_SONG =vlc.MediaPlayer("Slytherin.mp3")
-Hufflepuff_SONG =vlc.MediaPlayer("Hufflepuff.mp3")
-Ravenclaw_SONG =vlc.MediaPlayer("Ravenclaw.mp3")
-starting = vlc.MediaPlayer("starting.mp3")
-first_announcment = vlc.MediaPlayer("first_anncounment.mp3")
+mp3_dir = ".mp3's"
 
-voice_teacher = ["qurriell.mp3","lockhart.mp3","lupin.mp3","moddy.mp3","umbridge.mp3","snape.mp3"]
-Albus_speech = ["motive1.mp3","motive2.mp3","motive3.mp3","motive4.mp3","motive5.mp3","motive6.mp3","motive7.mp3"]
- 
+# Create media players with os.path.join
+feast = vlc.MediaPlayer(os.path.join(mp3_dir,"End" ,"feast.mp3"))
+respect = vlc.MediaPlayer(os.path.join(mp3_dir,"Professor's.mp3's", "respect.mp3"))
+
+# For the Hogwarts music, ensure the subdirectory is correctly handled
+hogwarts_music_dir = os.path.join(mp3_dir, "Hogwards_music.mp3")
+hogwarts = vlc.MediaPlayer(os.path.join(hogwarts_music_dir, "music.mp3"))
+
+hogwarts.play()
+
+# Define base directories
+houses_dir = os.path.join(".mp3's", "Houses_Announcment.mp3's")
+professors_dir = os.path.join(".mp3's", "Professor's.mp3's")
+
+# Create media players with os.path.join
+Gryffindor_SONG = vlc.MediaPlayer(os.path.join(houses_dir, "Gryffindor.mp3"))
+Slytherin_SONG = vlc.MediaPlayer(os.path.join(houses_dir, "Slytherin.mp3"))
+Hufflepuff_SONG = vlc.MediaPlayer(os.path.join(houses_dir, "Hufflepuff.mp3"))
+Ravenclaw_SONG = vlc.MediaPlayer(os.path.join(houses_dir, "Ravenclaw.mp3"))
+
+starting = vlc.MediaPlayer(os.path.join(professors_dir, "starting.mp3"))
+first_announcment = vlc.MediaPlayer(os.path.join(professors_dir, "first_anncounment.mp3"))
+
+
+
+voice_teacher = [
+    os.path.join(".mp3s", "Professor's.mp3's", "qurriell.mp3"),
+    os.path.join(".mp3s", "Professor's.mp3's", "lockhart.mp3"),
+    os.path.join(".mp3s", "Professor's.mp3's", "lupin.mp3"),
+    os.path.join(".mp3s", "Professor's.mp3's", "moddy.mp3"),
+    os.path.join(".mp3s", "Professor's.mp3's", "umbridge.mp3"),
+    os.path.join(".mp3s", "Professor's.mp3's", "snape.mp3")
+]
+
+
+base_dir = os.path.join(".mp3's", "Motivation.mp3's")
+
+# List of files using os.path.join
+Albus_speech = [
+    os.path.join(base_dir, "motive1.mp3"),
+    os.path.join(base_dir, "motive2.mp3"),
+    os.path.join(base_dir, "motive3.mp3"),
+    os.path.join(base_dir, "motive4.mp3"),
+    os.path.join(base_dir, "motive5.mp3"),
+    os.path.join(base_dir, "motive6.mp3"),
+    os.path.join(base_dir, "motive7.mp3")
+]
+
 parv = random.randint(0,5)
+
+
  
 # Houses_1 = ['GARUDDWAR', 'NAAGSHAKT', 'MEHENATKAS', 'CHEELGHAAT']
 Dark_Arts_teacher = ["Professor Quirinus Quirrell", "Professor Gilderoy Lockhart", "Professor Remus Lupin", "Professor Alastor 'Mad-Eye' Moody ", "Professor Dolores Umbridge", "Professor Severus Snape"]
@@ -139,9 +178,11 @@ print("\nHeadmaster Dumbledore :  'Welcome to another year at Hogwarts! Before w
 starting.play()
 time.sleep(8)
 if professor == "Professor Severus Snape":
-    print("Headmaster Dumbledore : Professor slughorn I am happy to say has agreed to resume his old post as potion master meanwhile the post of defense against the dark arts will takes by Professor Snape")
-    potion_master = vlc.MediaPlayer("potion_master.mp3")
+    print("\nHeadmaster Dumbledore : Professor slughorn I am happy to say has agreed to resume his old post as potion master meanwhile the post of defense against the dark arts will takes by Professor Snape\n\n")
+    mp3_dir = ".mp3's"
+    potion_master = vlc.MediaPlayer(os.path.join(mp3_dir,"Professor's.mp3's", "potion_master.mp3"))
     potion_master.play()
+    time.sleep(8.5)
 else:  
     print(f"\nHeadmaster Dumbledore : firstly I am pleased to announce that we have a new Defense Against the Dark Arts teacher this year. Please join me in welcoming {professor}! .\n\n")
     first_announcment.play()
@@ -189,11 +230,15 @@ motivation = Motivate[motive]
 time.sleep(4)
 print(f"     Headmaster Dumbledore :  {motivation}")
 albus_motivation = vlc.MediaPlayer(Albus_speech[motive])
+
 albus_motivation.play()
 time.sleep(8.5)
-glasstape = vlc.MediaPlayer("glasstape.mp3")
+
+mp3_dir = ".mp3's"
+glasstape = vlc.MediaPlayer(os.path.join(mp3_dir,"End","glasstape.mp3"))
 glasstape.play()
 time.sleep(3.5)
+
 print("\n              Now, let the feast begin! \n\n")
 feast.play()
 time.sleep(3.9)  # Ensure the audio has time to start
