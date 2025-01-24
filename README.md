@@ -14,4 +14,4 @@ Experience the magical Hogwarts Sorting Ceremony! This interactive Python progra
 6. Get started today and find out if you're Gryffindor, Slytherin, Hufflepuff, or Ravenclaw!
 
  <h3 style="font-size: 15px;"> Code Credits:</h3>
- Code written by **Parv Bhardwaaj** for the Hogwarts Sorting Ceremony Simulator project.  
+ Code written by **Parv Bhardwaj** for the Hogwarts Sorting Ceremony Simulator project.  
