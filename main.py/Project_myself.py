@@ -3,6 +3,14 @@ import time
 import os
 from tabulate import tabulate
 import vlc
+import logging
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger()
+
+logger.info("Starting Sorting Ceremony...")
+logger.error("File not found: feast.mp3")
+
 
 mp3_dir = ".mp3's"
 
