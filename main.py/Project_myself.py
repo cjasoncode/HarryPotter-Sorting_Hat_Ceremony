@@ -5,6 +5,8 @@ from tabulate import tabulate
 import vlc
 import logging
 
+
+ 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
 
@@ -13,6 +15,9 @@ logger.error("File not found: feast.mp3")
 
 
 mp3_dir = ".mp3's"
+narrator =vlc.MediaPlayer(os.path.join(mp3_dir,"narrator","final.mp3"))
+narrator.play()
+time.sleep(25.2)
 
 # Create media players with os.path.join
 feast = vlc.MediaPlayer(os.path.join(mp3_dir,"End" ,"feast.mp3"))
@@ -38,7 +43,6 @@ starting = vlc.MediaPlayer(os.path.join(professors_dir, "starting.mp3"))
 first_announcment = vlc.MediaPlayer(os.path.join(professors_dir, "first_anncounment.mp3"))
 
 
-
 voice_teacher = [
     os.path.join(".mp3's", "Professor's.mp3's", "qurriell.mp3"),
     os.path.join(".mp3's", "Professor's.mp3's", "lockhart.mp3"),
@@ -51,7 +55,7 @@ voice_teacher = [
 
 base_dir = os.path.join(".mp3's", "Motivation.mp3's")
 
-# List of files using os.path.join
+ 
 Albus_speech = [
     os.path.join(base_dir, "motive1.mp3"),
     os.path.join(base_dir, "motive2.mp3"),
@@ -76,35 +80,76 @@ House1 = ['Gryffindor', 'Slytherin', 'Hufflepuff', 'Ravenclaw']
 # Qualities
 
 Gryffindor = "Courage, bravery, daring, and chivalry."
-Slytherin= "Ambition, cunning, resourcefulness, and leadership."
+Slytherin = "Ambition, cunning, resourcefulness, and leadership."
 Hufflepuff = "Hard work, loyalty, patience, and fair play."
 Ravenclaw = "Intelligence, creativity, wisdom, and wit."
 
 Qualities = [Gryffindor,Slytherin,Hufflepuff,Ravenclaw]
- 
-  
+
+Professor_McG_1 =  vlc.MediaPlayer(os.path.join(mp3_dir,"Professor's.mp3's" ,"Professor_McG.mp3","professor_MCG_1.mp3"))
+Professor_McG_2 =  vlc.MediaPlayer(os.path.join(mp3_dir,"Professor's.mp3's" ,"Professor_McG.mp3","professor_MCG_2.mp3"))
+Professor_McG_3 =  vlc.MediaPlayer(os.path.join(mp3_dir,"Professor's.mp3's" ,"Professor_McG.mp3","professor_MCG_3.mp3"))
+
+sorting_hat_clear = vlc.MediaPlayer(os.path.join(mp3_dir,"Sorting_hat.mp3","hat_clear.mp3"))
+sorting_hat_problem = vlc.MediaPlayer(os.path.join(mp3_dir,"Sorting_hat.mp3","hat_problem.mp3"))
+hat_1 =  vlc.MediaPlayer(os.path.join(mp3_dir,"Sorting_hat.mp3","question1.mp3"))
+hat_2 =  vlc.MediaPlayer(os.path.join(mp3_dir,"Sorting_hat.mp3","question2.mp3"))
+hat_3 =  vlc.MediaPlayer(os.path.join(mp3_dir,"Sorting_hat.mp3","question3.mp3"))
+hat_4 =  vlc.MediaPlayer(os.path.join(mp3_dir,"Sorting_hat.mp3","question4.mp3"))
+
+
+hat_Gryffindor = vlc.MediaPlayer(os.path.join(mp3_dir,"hat_quality","hat_Gryffindor.mp3"))
+hat_Slytherin =  vlc.MediaPlayer(os.path.join(mp3_dir,"hat_quality","hat_Slytherin.mp3"))
+hat_Ravenclaw =  vlc.MediaPlayer(os.path.join(mp3_dir,"hat_quality","hat_Ravenclaw.mp3"))
+hat_Hufflepuff = vlc.MediaPlayer(os.path.join(mp3_dir,"hat_quality","hat_Hufflepuff.mp3"))
+
 
 print("\n                   ******* Participate in Hogwarts Sorting Ceremony *******")
 time.sleep(2)
-print("""\nInstructions For This Ceremony :\n\n1. Professor McGonagall has to write his name in the list first\n2. Each student is called forward, and the Sorting Hat is placed on their head.\n   the Hat determines their house based on their answers.\n3. The Hat announces the student's house aloud.\n4. The student joins their house table amid cheers.""")
 
-Student_name = input("\nEnter Your Name so Professor McGonagall can call you : ")
-time.sleep(2)
-print(f"\n       'Professor McGonagall' is calling  Now ............")
+print("""\nInstructions For This Ceremony :\n\n1. Professor McGonagall has to write your name in the list first\n2. Each student is called forward, and the Sorting Hat is placed on their head.\n   the Hat determines their house based on their answers.\n3. The Hat announces the student's house aloud.\n4. The student joins their house table amid cheers.""")
+
+
+Professor_McG_1.play()
+Student_name = input("\nProfessor McGonagall : All student Enter Your Name first : ")
+
+if Student_name=="":
+    print("\nError 404 : Name Not Found!\n")
+    exit()
+elif len(Student_name)==1:
+    print("\nError 401 : More Than One Alphabets In Your Name!\n")
+    exit()    
+
+time.sleep(3.5)
+
+Professor_McG_2.play()
+print("\nProfessor McGonagall : When i call your name , you come forth i shall place the sorting hat on your head and you will be sorted into your houses.")
+time.sleep(10.3)
+
+print(f"\n\n       'Professor McGonagall' is calling  Now ............")
 time.sleep(3)
 print(f"\n{Student_name}! from the list of first-year students")
 time.sleep(3)
 print(f"\n{Student_name}! walk up to the front of the Great Hall, sit on the stool, and the Sorting Hat is placed on his head")
 
+time.sleep(2.9)
 #   Questions
+hat_1.play()
 Question_1 = input("\nQuestion 1 - Do you prefer daring adventures or studying new spells? (adventure/spells):  ")
+time.sleep(2.9)
+hat_2.play()
 Question_2 = input("Question 2 - Would you rather have power and control or make new friends? (power/friends):  ")
+time.sleep(2.9)
+hat_3.play()
 Question_3 = input("Question 3 - Do you value loyalty or creativity more? (loyalty/creativity):  ")
+time.sleep(2.9)
+hat_4.play()
 Question_4 = input("Question 4 - Do you prefer bravery or cunning to get what you want? (bravery/cunning):  ")
 
+time.sleep(3.5)
 
 house = ""
-# Check all combinations
+ 
 if Question_1 == "adventure":
     if Question_2 == "power":
         if Question_3 == "loyalty":
@@ -163,25 +208,40 @@ elif house=='Ravenclaw':
     quality = Ravenclaw
 
 
-time.sleep(3)
-print(f"\n     Sorting Hat : 'It's difficult to say where i should keep you' ")
-time.sleep(4)
+sorting_hat_problem.play()
+
+print(f"\n     Sorting Hat : Hmmm difficult very difficult where to put you ? ")
+time.sleep(7.5)
+
+if house=='Gryffindor':
+     hat_Gryffindor.play()
+elif house=='Slytherin':
+     hat_Slytherin.play()
+elif house=='Hufflepuff':
+     hat_Hufflepuff.play()  
+elif house=='Ravenclaw':
+     hat_Ravenclaw.play()
+
 print(f"\n     Sorting Hat : Ah, I see...{quality}... ")
-time.sleep(5)
+time.sleep(11.5)
+sorting_hat_clear.play()
 print(f"\n     Sorting Hat : You have This is clear! \n                  '{house.upper()}!'    ")
+time.sleep(3.5)
 if house=='Gryffindor':
      announcement = Gryffindor_SONG.play()
 elif house=='Slytherin':
      announcement = Slytherin_SONG.play()
 elif house=='Hufflepuff':
-     announcement = Hufflepuff_SONG.play()
+     announcement = Hufflepuff_SONG.play()         
 elif house=='Ravenclaw':
      announcement = Ravenclaw_SONG.play()   
 time.sleep(2.5)
 print(f"\n{Student_name} walks confidently to the '{house}' table, where they are greeted with applause from their new housemates.\n")
 time.sleep(2.5)
-print("Professor McGonagall : 'Now the Headmaster Dumbledore will say something'")
-time.sleep(2.5)
+
+Professor_McG_3.play()
+print("Professor McGonagall : 'Before begin feast Headmaster Dumbledore will say something'")
+time.sleep(9.5)
 print("\nHeadmaster Dumbledore :  'Welcome to another year at Hogwarts! Before we begin our feast,\n I have a few announcements to share' ")
 starting.play()
 time.sleep(8)
@@ -249,7 +309,6 @@ time.sleep(3.5)
 
 print("\n              Now, let the feast begin! \n\n")
 feast.play()
-time.sleep(3.9)  # Ensure the audio has time to start
-
+time.sleep(3.9)   
 
   
